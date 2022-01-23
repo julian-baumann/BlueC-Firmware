@@ -1,4 +1,6 @@
 #include "DisplayService.h"
+#include <Adafruit_SSD1306.h>
+#include <Arduino.h>
 
 DisplayService::DisplayService()
 {
@@ -20,7 +22,7 @@ void DisplayService::ClearScreen() {
 
 void DisplayService::SplashScreen() {
     ClearScreen();
-    
+
     display->clearDisplay();
     display->setCursor(67,0);
     display->println('Hello World');
