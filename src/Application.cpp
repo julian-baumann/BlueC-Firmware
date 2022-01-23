@@ -1,14 +1,18 @@
-#include "Application.h"
+#include "Application.hpp"
+
 
 void setup()
 {
     Serial.begin(115200);
-    
+
     _displayService = new DisplayService();
+    _loRaService = new LoRaService();
+
     _displayService->SplashScreen();
+    _loRaService->Initialize();
 }
 
 void loop()
 {
-    delay(1000);
+    _loRaService->CheckForNewMessages();
 }

@@ -1,13 +1,13 @@
 #pragma once
 
-#include "stdlib.h"
-#include "string"
+#include "cstdlib"
+#include <string>
 #include <iostream>
 #include <sstream>
 #include <Adafruit_GFX.h>
 #include "Adafruit_SSD1306.h"
-#include "../../Config.h"
-#include "DisplayIcons.h"
+#include "../../Config.hpp"
+#include "DisplayIcons.hpp"
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64  // OLED display height, in pixels
