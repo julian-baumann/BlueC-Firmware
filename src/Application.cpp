@@ -1,12 +1,14 @@
-#include <Arduino.h>
+#include "Application.h"
 
 void setup()
 {
     Serial.begin(115200);
+    
+    _displayService = new DisplayService();
+    _displayService->SplashScreen();
 }
 
 void loop()
 {
-    Serial.println("Hello, World!");
     delay(1000);
 }

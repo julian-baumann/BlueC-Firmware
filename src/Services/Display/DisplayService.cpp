@@ -2,26 +2,29 @@
 
 DisplayService::DisplayService()
 {
-    if (!display->begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
-        Serial.println("Display ERROR");
+    if (!_display->begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+        Serial.println("Cannot connect to display");
         return;
     }
+
     delay(250);
 
-    ClearScreen();
-    display->setTextSize(1);
-    display->setTextColor(WHITE);
-    display->display();
-}
-
-void DisplayService::ClearScreen() {
-     display->clearDisplay();
+    _display->clearDisplay();
+    _display->setTextSize(1);
+    _display->setTextColor(WHITE);
+    _display->display();
 }
 
 void DisplayService::SplashScreen() {
-    ClearScreen();
+    _display->clearDisplay();
     
-    display->clearDisplay();
-    display->setCursor(67,0);
-    display->println('Hello World');
+    _display->setCursor(67,10);
+    _display->println(OS_NAME);
+
+    _display->drawBitmap(10, 10, LOGO44, 44, 44, WHITE);
+
+    _display->setCursor(67, 20);
+    _display->println(OS_VERSION);
+
+    _display->display();
 }
