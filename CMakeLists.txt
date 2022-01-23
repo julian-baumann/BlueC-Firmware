@@ -12,6 +12,8 @@ set(CMAKE_CXX_COMPILER_WORKS 1)
 
 project("BlueC-Firmware" C CXX)
 
+# add_subdirectory(Dependencies/Adafruit_SSD1306)
+
 include(CMakeListsPrivate.txt)
 
 if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/CMakeListsUser.txt)
